@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Ticket Booking</title>
+</head>
+<style>
+    body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+header {
+    background-color: rgb(255, 217, 0);
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #333;
+}
+
+.movie-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.movie-option {
+    text-align: center;
+    width: 100%;
+    max-width: 150px;
+}
+
+.movie-option img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.center {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+        to right,
+        rgb(219, 216, 11),
+        rgb(64, 182, 64)
+    );
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    position: fixed;
+    bottom: 0;
+    width: 10%;
+}
+</style>
+<body>
+
+<header>
+    <h1>Movie Ticket Booking</h1>
+</header>
+
+<main>
+    <section id="movie-selection">
+        <h2>Choose a Movie</h2>
+        <div class="movie-options">
+            <!-- Movie options will go here -->
+            <div class="movie-option">
+                <img src="C:\Users\Administrator\Pictures\The Modern Times.jpeg" alt="The Modern Times">
+                <p>The Modern Times</p>
+                <button onclick="redirectToBookingPage('The Modern Times')">Book Now</button>
+            </div>
+            <div class="movie-option">
+                <img src="C:\Users\Administrator\Pictures\The Godfather.jpeg" alt="The Godfather">
+                <p>The Godfather</p>
+                <button onclick="redirectToBookingPage('The Godfather')">Book Now</button>
+            </div>
+            <div class="movie-option">
+                <img src="C:\Users\Administrator\Pictures\Seven Samurai.jpeg" alt="Seven Samurai">
+                <p>Seven Samurai</p>
+                <button onclick="redirectToBookingPage('Seven Samurai')">Book Now</button>
+            </div>
+            <div class="movie-option">
+                <img src="C:\Users\Administrator\Pictures\The Mirror.jpeg" alt="The Mirror">
+                <p>The Mirror</p>
+                <button onclick="redirectToBookingPage('The Mirror')">Book Now</button>
+            </div>
+            <div class="movie-option">
+                <img src="C:\Users\Administrator\Pictures\Hey Ram.jpeg" alt="Hey Ram">
+                <p>Hey Ram</p>
+                <button onclick="redirectToBookingPage('Hey Ram')">Book Now</button>
+            </div>
+            <div class="movie-option">
+                <img src="C:\Users\Administrator\Pictures\Gangs Of Wasseypur.jpeg" alt="Gangs Of Wasseypur">
+                <p>Gangs of Wasseypur</p>
+                <button onclick="redirectToBookingPage('Gangs Of Wasseypur')">Book Now</button>
+            </div>
+            <div class="movie-option">
+                <img src="C:\Users\Administrator\Pictures\A Separation.jpeg" alt="A Separation">
+                <p>A Separation</p>
+                <button onclick="redirectToBookingPage('A Separation')">Book Now</button>
+            </div>
+            <div class="movie-option">
+                <img src="C:\Users\Administrator\Pictures\Grave of Fireflies.jpeg" alt="Grave of the Fireflies">
+                <p>Grave of the Fireflies</p>
+                <button onclick="redirectToBookingPage('Grave of the Fireflies')">Book Now</button>
+            </div>
+            <!-- Add more movie options as needed -->
+        </div>
+    </section>
+
+    <script>
+        // Function to redirect to the booking page with selected movie
+        function redirectToBookingPage(movieName) {
+            // Replace 'booking.html' with the actual URL of your booking page
+            window.location.href = `C:/Users/Administrator/Desktop/Ticket Booking.html?movie=${encodeURIComponent(movieName)}`;
+        }
+    </script>
+</main>
+
+<footer>
+    <p>&copy; 2023 Movie Ticket Booking</p>
+</footer>
+
+<!-- Include your JavaScript file here -->
+
+</body>
+</html>
