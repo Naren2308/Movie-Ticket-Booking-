@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Tickets</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: rgb(250, 204, 0);
+    color: white;
+    text-align: center;
+    padding: 1em;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+main {
+    padding: 20px;
+}
+
+.search-container {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.search-container input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.search-container button {
+  padding: 10px 16px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-container button:hover {
+  background-color: #45a049;
+}
+
+.movie-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.movie-option {
+    width: 200px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.movie-option img {
+    max-width: 100%;
+    height: auto;
+}
+
+.movie-option h3 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.movie-option p {
+    margin: 5px 0;
+}
+
+.movie-option button {
+    padding: 8px 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+</style>
+<body>
+
+<header>
+    <h1>Retro Tickets</h1> 
+</header>
+
+<main>
+    <section id="movie-selection">
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Search for a movie...">
+            <button onclick="searchMovies()">Search</button>
+        </div>
+        <h2>Choose a Movie</h2>
+        <div class="movie-options">
+            <!-- Movie options will go here -->
+            <div class="movie-option">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Modern_Times_poster.jpg" alt="The Modern Times">
+                <head><b>The Modern Times</b></head>
+                <p><strong>Duration:</strong> 2h 27m </p>
+                <p><strong>Language:</strong> --- </p>
+                <p><strong>Certification:</strong> G </p>
+                <p><strong>Director:</strong> Charlie Chaplin </p>
+                <button onclick="redirectToBookingPage('The Modern Times')">Book Now</button>
+            </div>
+            <div class="movie-option">
+                <img src="https://m.media-amazon.com/images/M/MV5BY2I4MmM1N2EtM2YzOS00OWUzLTkzYzctNDc5NDg2N2IyODJmXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_QL75_UX190_CR0,2,190,281_.jpg" alt="City Lights">
+                <head><b>City Lights</b></head>
+                <p><strong>Duration:</strong> 1h 27m </p>
+                <p><strong>Language:</strong> --- </p>
+                <p><strong>Certification:</strong> G </p>
+                <p><strong>Director:</strong> Charlie Chaplin </p>
+                <button onclick="redirectToBookingPage('City Lights')">Book Now</button>
+            </div>
+            <div class="movie-option">
+                <img src="https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UX1000_.jpg" alt="The Godfather">
+                <head><b>The Godfather</b></head>
+                <p><strong>Duration:</strong> 2h 55m </p>
+                <p><strong>Language:</strong> English </p>
+                <p><strong>Certification:</strong> R </p>
+                <p><strong>Director:</strong> Francis Ford Coppola </p>
+                <button onclick="redirectToBookingPage('The Godfather')">Book Now</button>
+            </div>
+            <div class="movie-option">
+                <img src="https://image.tmdb.org/t/p/original/b4VhGr8araoLf8UVT80Fy79PS1T.jpg" alt="Seven Samurai">
+                <head><b>Seven Samurai</b></head>
+                <p><strong>Duration:</strong> 3h 27m </p>
+                <p><strong>Language:</strong> Japanese </p>
+                <p><strong>Certification:</strong> PG-13 </p>
+                <p><strong>Director:</strong> Akira Kurosawa </p>
+                <button onclick="redirectToBookingPage('Seven Samurai')">Book Now</button>
+            </div>
+            <div class="movie-option">
+                <img src="https://m.media-amazon.com/images/S/pv-target-images/1a174616de9e812dc936bac38a43958cc57911946f3e20a57f9b0492e9c76bc8.jpg" alt="Goodfellas">
+                <head><b>GoodFellas</b></head>
+                <p><strong>Duration:</strong> 2h 25m </p>
+                <p><strong>Language:</strong> English </p>
+                <p><strong>Certification:</strong> R </p>
+                <p><strong>Director:</strong> Martin Scorsese </p>
+                <button onclick="redirectToBookingPage('Goodfellas')">Book Now</button>
+            </div>
+            <div class="movie-option">
+                <img src="https://m.media-amazon.com/images/S/pv-target-images/9976eeb71e8c9a9aee6e9eabf846836fd451d3f5ee846364a1287667b474a374.jpg" alt="Hey Ram">
+                <head><b>Hey Ram</b></head>
+                <p><strong>Duration:</strong> 3h 6m </p>
+                <p><strong>Language:</strong> Tamil </p>
+                <p><strong>Certification:</strong> A </p>
+                <p><strong>Director:</strong> Kamal Hassan </p>
+                <button onclick="redirectToBookingPage('Hey Ram')">Book Now</button>
+            </div>
+            <div class="movie-option">
+                <img src="https://m.media-amazon.com/images/M/MV5BMTc5NjY4MjUwNF5BMl5BanBnXkFtZTgwODM3NzM5MzE@._V1_.jpg" alt="Gangs Of Wasseypur">
+                <head><b>Gangs Of Wasseypur</b></head>
+                <p><strong>Duration:</strong> 2h 40m </p>
+                <p><strong>Language:</strong> Hindi </p>
+                <p><strong>Certification:</strong> A </p>
+                <p><strong>Director:</strong> Anurag Kashyap </p>
+                <button onclick="redirectToBookingPage('Gangs Of Wasseypur')">Book Now</button>
+            </div>
+            <div class="movie-option">
+                <img src="https://www.tallengestore.com/cdn/shop/products/JurassicPark-HollywoodMovieArtPoster_9e630d90-6e35-4340-96ec-48ddc4d32e3d.jpg " alt="Jurassic Park">
+                <head><b>Jurassic Park</b></head>
+                <p><strong>Duration:</strong> 2h 7m </p>
+                <p><strong>Language:</strong> English </p>
+                <p><strong>Certification:</strong> PG-13 </p>
+                <p><strong>Director:</strong> Steven Spielberg </p>
+                <button onclick="redirectToBookingPage('Jurassic Park')">Book Now</button>
+            </div>
+            <div class="movie-option">
+                <img src="https://static.toiimg.com/photo/msid-61315449/61315449.jpg" alt="விருமாண்டி">
+                <head><b>விருமாண்டி</b></head>
+                <p><strong>Duration:</strong> 2h 55m </p>
+                <p><strong>Language:</strong> Tamil </p>
+                <p><strong>Certification:</strong> A </p>
+                <p><strong>Director:</strong> Kamal Hassan </p>
+                <button onclick="redirectToBookingPage('விருமாண்டி')">Book Now</button>
+            </div>
+            <div class="movie-option">
+                <img src="https://s3.amazonaws.com/criterion-production/films/9259a40bf9ceb623f565a9629416e6cc/ZMwlUFL3CDDMgsvBiMLhyDcWcdSAli_original.jpg" alt="Come and See">
+                <head><b>Come and See</b></head>
+                <p><strong>Duration:</strong> 2h 22m </p>
+                <p><strong>Language:</strong> Russian </p>
+                <p><strong>Certification:</strong> R </p>
+                <p><strong>Director:</strong> Elam Kilimov </p>
+                <button onclick="redirectToBookingPage('Come and See')">Book Now</button>
+            </div>
+            <div class="movie-option">
+                <img src="https://m.media-amazon.com/images/M/MV5BMmFkNDY5OTktNzY3Yy00OTFlLThhNjktOTRhMmZjZmIxYjAxXkEyXkFqcGdeQXVyNTgyNTA4MjM@._V1_.jpg" alt="Pather Panchali">
+                <head><b>Pather Panchali</b></head>
+                <p><strong>Duration:</strong> 2h 5m </p>
+                <p><strong>Language:</strong> Bengali </p>
+                <p><strong>Certification:</strong> U </p>
+                <p><strong>Director:</strong> Satyajit Ray </p>
+                <button onclick="redirectToBookingPage('Pather Panchali')">Book Now</button>
+            </div>
+            <div class="movie-option">
+                <img src="https://www.reelviews.net/resources/img/posters/thumbs/nayagan_poster.jpg" alt="நாயகன்">
+                <head><b>நாயகன்</b></head>
+                <p><strong>Duration:</strong> 2h 25m </p>
+                <p><strong>Language:</strong> Tamil </p>
+                <p><strong>Certification:</strong> A </p>
+                <p><strong>Director:</strong> Mani Ratnam </p>
+                <button onclick="redirectToBookingPage('நாயகன்')">Book Now</button>
+            </div>
+            <div class="movie-option">
+                <img src="https://eplay-prod.s3.eu-west-1.amazonaws.com/store/movie_region_poster/2164/file/movie_detail_image/209bdb6680acca9ccc8915adace183e1.jpg" alt="Cinema Paradiso">
+                <head><b>Cinema Paradiso</b></head>
+                <p><strong>Duration:</strong> 2h 35m </p>
+                <p><strong>Language:</strong> Italian </p>
+                <p><strong>Certification:</strong> PG </p>
+                <p><strong>Director:</strong> Giuseppe Tornatore </p>
+                <button onclick="redirectToBookingPage('Cinema Paradiso')">Book Now</button>
+            </div>
+            <div class="movie-option">
+                <img src="https://m.media-amazon.com/images/M/MV5BNzg2NDRhODAtYWNjNi00YmVlLTg2YjQtZmE3ZjU5NjQ3NDI0XkEyXkFqcGdeQXVyMjM3NjAwODc@._V1_.jpg" alt="வசந்தமாளிகை">
+                <head><b>வசந்தமாளிகை</b></head>
+                <p><strong>Duration:</strong> 2h 42m </p>
+                <p><strong>Language:</strong> Tamil </p>
+                <p><strong>Certification:</strong> U </p>
+                <p><strong>Director:</strong> K.S. Prakash Rao </p>
+                <button onclick="redirectToBookingPage('வசந்தமாளிகை')">Book Now</button>
+            </div>
+            <div class="movie-option">
+                <img src="https://timesofindia.indiatimes.com/photo/62723977.cms" alt="Enga Veetu Pillai">
+                <head><b>எங்க வீட்டு பில்லை</b></head>
+                <p><strong>Duration:</strong> 2h 27m </p>
+                <p><strong>Language:</strong> Tamil </p>
+                <p><strong>Certification:</strong> U </p>
+                <p><strong>Director:</strong> Tapi Chanakya </p>
+                <button onclick="redirectToBookingPage('Enga Veetu Pillai')">Book Now</button>
+            </div>
+            <div class="movie-option">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTya3Q4ArSiM5R6svNlLs4pit0k4z3RK02koM18OFvhc6KJ0fCJzHbUt7wvCFzDg6CrPpc&usqp=CAU" alt="முதல் மரியாதை">
+                <head><b>முதல் மரியாதை</b></head>
+                <p><strong>Duration:</strong> 2h 43m </p>
+                <p><strong>Language:</strong> Tamil </p>
+                <p><strong>Certification:</strong> PG-13 </p>
+                <p><strong>Director:</strong> Bharathiraja </p>
+                <button onclick="redirectToBookingPage('முதல் மரியாதை')">Book Now</button>
+            </div>
+            <div class="movie-option">
+                <img src="https://static.wikia.nocookie.net/studio-ghibli/images/6/6d/Grave_of_the_Fireflies_poster.jpg/revision/latest?cb=20220126173445" alt="Grave of the Fireflies">
+                <head><b>Grave Of The Fireflies</b></head>
+                <p><strong>Duration:</strong> 1h 29m </p>
+                <p><strong>Language:</strong> Japanese </p>
+                <p><strong>Certification:</strong> PG-13 </p>
+                <p><strong>Director:</strong> Isao Takahata </p>
+                <button onclick="redirectToBookingPage('Grave of the Fireflies')">Book Now</button>
+            </div>
+            <!-- Add more movie options as needed -->
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; 2023 Movie Ticket Booking</p>
+</footer>
+<!-- Include your JavaScript file here -->
+<script>
+    // Function to redirect to the booking page with selected movie
+    function redirectToBookingPage(movieName) {
+        // Replace 'booking.html' with the actual URL of your booking page
+        window.location.href = `file:///C:/Users/Administrator/Desktop/Ticket%20Booking.html?movie=${encodeURIComponent(movieName)}`;
+    }
+</script>
+
+<script>
+    function searchMovies() {
+var searchTerm = document.getElementById('search').value.toLowerCase();
+var movieOptions = document.querySelectorAll('.movie-option');
+
+movieOptions.forEach(function (option) {
+    var movieDetails = option.innerText.toLowerCase();
+
+    if (movieDetails.includes(searchTerm)) {
+        option.style.display = 'block';
+    } else {
+        option.style.display = 'none';
+    }
+});
+}
+</script>
+
+</body>
+</html>
